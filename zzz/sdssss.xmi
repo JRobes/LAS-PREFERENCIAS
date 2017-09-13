@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ASCII"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_hi3g4ZLhEeeDssDzt_oqoA" elementId="zzz.application" contributorURI="platform:/plugin/zzz" selectedElement="_hi4H8JLhEeeDssDzt_oqoA" bindingContexts="_hi4vEJLhEeeDssDzt_oqoA">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_hi4H8JLhEeeDssDzt_oqoA" elementId="zzz.window.main" contributorURI="platform:/plugin/zzz" label="Eclipse 4 RCP Application" x="25" y="25" width="500" height="400">
+    <tags>topLevel</tags>
+    <children xsi:type="basic:PartSashContainer" xmi:id="_hi4H8ZLhEeeDssDzt_oqoA" elementId="zzz.partsashcontainer.sample" contributorURI="platform:/plugin/zzz">
+      <children xsi:type="basic:PartStack" xmi:id="_hi4H8pLhEeeDssDzt_oqoA" elementId="zzz.partstack.sample" contributorURI="platform:/plugin/zzz" containerData="5000" selectedElement="_hi4H85LhEeeDssDzt_oqoA">
+        <children xsi:type="basic:Part" xmi:id="_hi4H85LhEeeDssDzt_oqoA" elementId="zzz.part.sample" contributorURI="platform:/plugin/zzz" contributionURI="bundleclass://zzz/zzz.parts.SamplePart" label="Sample Part"/>
+      </children>
+    </children>
+    <mainMenu xmi:id="_hi4H9JLhEeeDssDzt_oqoA" elementId="org.eclipse.ui.main.menu" contributorURI="platform:/plugin/zzz">
+      <children xsi:type="menu:Menu" xmi:id="_hi4H9ZLhEeeDssDzt_oqoA" elementId="file" contributorURI="platform:/plugin/zzz" label="File">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_hi4H9pLhEeeDssDzt_oqoA" elementId="zzz.handleditem.file.open" contributorURI="platform:/plugin/zzz" label="Open" iconURI="platform:/plugin/zzz/icons/sample.png" command="_hi5WE5LhEeeDssDzt_oqoA"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_hi4H95LhEeeDssDzt_oqoA" elementId="zzz.handleditem.save" contributorURI="platform:/plugin/zzz" label="Save" iconURI="platform:/plugin/zzz/icons/save_edit.png" command="_hi5WFJLhEeeDssDzt_oqoA"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_hi4H-JLhEeeDssDzt_oqoA" elementId="zzz.handleditem.quit" contributorURI="platform:/plugin/zzz" label="Quit" command="_hi5WEpLhEeeDssDzt_oqoA"/>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_hi4H-ZLhEeeDssDzt_oqoA" elementId="help" contributorURI="platform:/plugin/zzz" label="Help">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_hi4vAJLhEeeDssDzt_oqoA" elementId="zzz.handleditem.about" contributorURI="platform:/plugin/zzz" label="About" command="_hi5WFZLhEeeDssDzt_oqoA"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_hi4vAZLhEeeDssDzt_oqoA" elementId="zzz.handledmenuitem.preferences" contributorURI="platform:/plugin/zzz" label="Preferences" command="_hi5WFpLhEeeDssDzt_oqoA"/>
+      </children>
+    </mainMenu>
+    <trimBars xmi:id="_hi4vApLhEeeDssDzt_oqoA" elementId="zzz.trimbar.top" contributorURI="platform:/plugin/zzz">
+      <children xsi:type="menu:ToolBar" xmi:id="_hi4vA5LhEeeDssDzt_oqoA" elementId="org.eclipse.ui.main.toolbar" contributorURI="platform:/plugin/zzz">
+        <tags>Draggable</tags>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_hi4vBJLhEeeDssDzt_oqoA" elementId="zzz.handleditem.trimbar.top.open" contributorURI="platform:/plugin/zzz" iconURI="platform:/plugin/zzz/icons/sample.png" command="_hi5WE5LhEeeDssDzt_oqoA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_hi4vBZLhEeeDssDzt_oqoA" elementId="zzz.handleditem.trimbar.top.save" contributorURI="platform:/plugin/zzz" iconURI="platform:/plugin/zzz/icons/save_edit.png" enabled="false" command="_hi5WFJLhEeeDssDzt_oqoA"/>
+      </children>
+    </trimBars>
+  </children>
+  <handlers xmi:id="_hi4vBpLhEeeDssDzt_oqoA" elementId="zzz.handler.quitCommand" contributorURI="platform:/plugin/zzz" contributionURI="bundleclass://zzz/zzz.handlers.QuitHandler" command="_hi5WEpLhEeeDssDzt_oqoA"/>
+  <handlers xmi:id="_hi4vB5LhEeeDssDzt_oqoA" elementId="zzz.handler.openCommand" contributorURI="platform:/plugin/zzz" contributionURI="bundleclass://zzz/zzz.handlers.OpenHandler" command="_hi5WE5LhEeeDssDzt_oqoA"/>
+  <handlers xmi:id="_hi4vCJLhEeeDssDzt_oqoA" elementId="zzz.handler.saveCommand" contributorURI="platform:/plugin/zzz" contributionURI="bundleclass://zzz/zzz.handlers.SaveHandler" command="_hi5WFJLhEeeDssDzt_oqoA"/>
+  <handlers xmi:id="_hi4vCZLhEeeDssDzt_oqoA" elementId="zzz.handler.aboutCommand" contributorURI="platform:/plugin/zzz" contributionURI="bundleclass://zzz/zzz.handlers.AboutHandler" command="_hi5WFZLhEeeDssDzt_oqoA"/>
+  <handlers xmi:id="_hi4vCpLhEeeDssDzt_oqoA" elementId="zzz.handler.preference" contributorURI="platform:/plugin/zzz" contributionURI="bundleclass://zzz/zzz.preferences.MyPreferences" command="_hi5WFpLhEeeDssDzt_oqoA"/>
+  <bindingTables xmi:id="_hi4vC5LhEeeDssDzt_oqoA" elementId="zzz.bindingtable" contributorURI="platform:/plugin/zzz" bindingContext="_hi4vEJLhEeeDssDzt_oqoA">
+    <bindings xmi:id="_hi4vDJLhEeeDssDzt_oqoA" elementId="zzz.keybinding.m1q" contributorURI="platform:/plugin/zzz" keySequence="M1+Q" command="_hi5WEpLhEeeDssDzt_oqoA"/>
+    <bindings xmi:id="_hi4vDZLhEeeDssDzt_oqoA" elementId="zzz.keybinding.m1o" contributorURI="platform:/plugin/zzz" keySequence="M1+O" command="_hi5WE5LhEeeDssDzt_oqoA"/>
+    <bindings xmi:id="_hi4vDpLhEeeDssDzt_oqoA" elementId="zzz.keybinding.m1s" contributorURI="platform:/plugin/zzz" keySequence="M1+S" command="_hi5WFJLhEeeDssDzt_oqoA"/>
+    <bindings xmi:id="_hi4vD5LhEeeDssDzt_oqoA" elementId="zzz.keybinding.m1a" contributorURI="platform:/plugin/zzz" keySequence="M1+A" command="_hi5WFZLhEeeDssDzt_oqoA"/>
+  </bindingTables>
+  <rootContext xmi:id="_hi4vEJLhEeeDssDzt_oqoA" elementId="org.eclipse.ui.contexts.dialogAndWindow" contributorURI="platform:/plugin/zzz" name="In Dialog and Windows">
+    <children xmi:id="_hi5WEJLhEeeDssDzt_oqoA" elementId="org.eclipse.ui.contexts.window" contributorURI="platform:/plugin/zzz" name="In Windows"/>
+    <children xmi:id="_hi5WEZLhEeeDssDzt_oqoA" elementId="org.eclipse.ui.contexts.dialog" contributorURI="platform:/plugin/zzz" name="In Dialogs"/>
+  </rootContext>
+  <commands xmi:id="_hi5WEpLhEeeDssDzt_oqoA" elementId="org.eclipse.ui.file.exit" contributorURI="platform:/plugin/zzz" commandName="quitCommand"/>
+  <commands xmi:id="_hi5WE5LhEeeDssDzt_oqoA" elementId="org.eclipse.ui.file.open" contributorURI="platform:/plugin/zzz" commandName="openCommand"/>
+  <commands xmi:id="_hi5WFJLhEeeDssDzt_oqoA" elementId="org.eclipse.ui.file.save" contributorURI="platform:/plugin/zzz" commandName="saveCommand"/>
+  <commands xmi:id="_hi5WFZLhEeeDssDzt_oqoA" elementId="org.eclipse.ui.help.aboutAction" contributorURI="platform:/plugin/zzz" commandName="aboutCommand"/>
+  <commands xmi:id="_hi5WFpLhEeeDssDzt_oqoA" elementId="zzz.command.preferencescommand" contributorURI="platform:/plugin/zzz" commandName="preferencesCommand"/>
+  <addons xmi:id="_hi5WF5LhEeeDssDzt_oqoA" elementId="org.eclipse.e4.core.commands.service" contributorURI="platform:/plugin/zzz" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_hi5WGJLhEeeDssDzt_oqoA" elementId="org.eclipse.e4.ui.contexts.service" contributorURI="platform:/plugin/zzz" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_hi5WGZLhEeeDssDzt_oqoA" elementId="org.eclipse.e4.ui.bindings.service" contributorURI="platform:/plugin/zzz" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
+  <addons xmi:id="_hi5WGpLhEeeDssDzt_oqoA" elementId="org.eclipse.e4.ui.workbench.commands.model" contributorURI="platform:/plugin/zzz" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_hi5WG5LhEeeDssDzt_oqoA" elementId="org.eclipse.e4.ui.workbench.handler.model" contributorURI="platform:/plugin/zzz" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
+  <addons xmi:id="_hi5WHJLhEeeDssDzt_oqoA" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributorURI="platform:/plugin/zzz" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_hi5WHZLhEeeDssDzt_oqoA" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributorURI="platform:/plugin/zzz" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+</application:Application>
