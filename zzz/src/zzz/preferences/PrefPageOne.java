@@ -1,6 +1,7 @@
 package zzz.preferences;
 
 import org.eclipse.core.runtime.preferences.DefaultScope;
+import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferencePage;
 import org.eclipse.swt.SWT;
@@ -21,7 +22,7 @@ class PrefPageOne extends PreferencePage {
   private static final String ONE = "one.one";
   private static final String TWO = "one.two";
   private static final String THREE = "one.three";
-  public Preferences defaultPrefs, defaultPrefs2;
+  public Preferences defaultPrefs, defaultPrefs2, instancePrefs;
 
   // Text fields for user to enter preferences
   private Text fieldOne;
@@ -34,6 +35,7 @@ class PrefPageOne extends PreferencePage {
 	    
 	    defaultPrefs = DefaultScope.INSTANCE.getNode("nastraneditor.preferences.general");
 	    defaultPrefs2 = DefaultScope.INSTANCE.getNode("nastraneditor.preferences.general");
+	    instancePrefs = InstanceScope.INSTANCE.getNode("nastraneditor.preferences.general");
 
 	    try {
 			String childrenNames[] = defaultPrefs2.childrenNames();
@@ -45,8 +47,8 @@ class PrefPageOne extends PreferencePage {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	    String text = defaultPrefs.get("texto2", "ERROR READING NASTRAN DEFAULT PREFS...");
-	    System.out.println(text);
+	    //String text = defaultPrefs.get("texto2", defaultPrefs.get("texto2", "Aquí no puede llegar"));
+	    //System.out.println(text);
 	  }
   
   /**
@@ -64,7 +66,9 @@ class PrefPageOne extends PreferencePage {
     new Label(composite, SWT.LEFT).setText("Field One:");
     fieldOne = new Text(composite, SWT.BORDER);
     fieldOne.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-    fieldOne.setText(defaultPrefs.get("texto1", "ERROR READING NASTRAN DEFAULT PREFS..."));
+    fieldOne.setText(instancePrefs.get("texto2", "NO COGE LAS INSTANCE PREFS"));
+
+   // fieldOne.setText(instancePrefs.get("texto2", defaultPrefs.get("texto2", "Aquí no puede llegar")));
     		//preferenceStore.getString(ONE));
 
     new Label(composite, SWT.LEFT).setText("Field Two:");
@@ -103,11 +107,16 @@ class PrefPageOne extends PreferencePage {
     IPreferenceStore preferenceStore = getPreferenceStore();
 
     // Set the values from the fields
-    if (fieldOne != null) defaultPrefs.put("texto1","cambiadoooooo....");//preferenceStore.setValue(ONE, fieldOne.getText());
+    if (fieldOne != null) instancePrefs.put("texto2",fieldOne.getText());//preferenceStore.setValue(ONE, fieldOne.getText());
     if (fieldTwo != null) preferenceStore.setValue(TWO, fieldTwo.getText());
     if (fieldThree != null)
         preferenceStore.setValue(THREE, fieldThree.getText());
-
+     try {
+		instancePrefs.flush();
+	} catch (BackingStoreException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
     // Return true to allow dialog to close
     return true;
   }
