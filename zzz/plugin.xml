@@ -16,6 +16,10 @@
                name="appName"
                value="zzz">
          </property>
+         <property
+               name="preferenceCustomization"
+               value="/prefs/plugin_customization.ini">
+         </property>
       </product>
    </extension>
 

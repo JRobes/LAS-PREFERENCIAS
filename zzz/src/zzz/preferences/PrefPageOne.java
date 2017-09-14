@@ -32,8 +32,8 @@ class PrefPageOne extends PreferencePage {
 	    super("One");
 	    setDescription("RRRRRRRRRR");
 	    
-	    defaultPrefs = DefaultScope.INSTANCE.getNode("nastraneditor.preferences.general/");
-	    defaultPrefs2 = DefaultScope.INSTANCE.getNode("nastraneditor.preferences.general/");
+	    defaultPrefs = DefaultScope.INSTANCE.getNode("nastraneditor.preferences.general");
+	    defaultPrefs2 = DefaultScope.INSTANCE.getNode("nastraneditor.preferences.general");
 
 	    try {
 			String childrenNames[] = defaultPrefs2.childrenNames();
