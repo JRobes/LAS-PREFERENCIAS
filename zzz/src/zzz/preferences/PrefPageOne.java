@@ -34,9 +34,9 @@ class PrefPageOne extends PreferencePage {
 	    setDescription("RRRRRRRRRR");
 	    
 	    defaultPrefs = DefaultScope.INSTANCE.getNode("nastraneditor.preferences.general");
-	    defaultPrefs2 = DefaultScope.INSTANCE.getNode("nastraneditor.preferences.general");
+	    //defaultPrefs2 = DefaultScope.INSTANCE.getNode("nastraneditor.preferences.general");
 	    instancePrefs = InstanceScope.INSTANCE.getNode("nastraneditor.preferences.general");
-
+/*
 	    try {
 			String childrenNames[] = defaultPrefs2.childrenNames();
 			System.out.println("numero de children......"+childrenNames.length);
@@ -47,6 +47,7 @@ class PrefPageOne extends PreferencePage {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	    */
 	    //String text = defaultPrefs.get("texto2", defaultPrefs.get("texto2", "Aquí no puede llegar"));
 	    //System.out.println(text);
 	  }
@@ -66,7 +67,7 @@ class PrefPageOne extends PreferencePage {
     new Label(composite, SWT.LEFT).setText("Field One:");
     fieldOne = new Text(composite, SWT.BORDER);
     fieldOne.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-    fieldOne.setText(instancePrefs.get("texto2", "NO COGE LAS INSTANCE PREFS"));
+    fieldOne.setText(instancePrefs.get("texto1", defaultPrefs.get("texto1", "NUNCA DEBE LLEGAR AQUI..")));
 
    // fieldOne.setText(instancePrefs.get("texto2", defaultPrefs.get("texto2", "Aquí no puede llegar")));
     		//preferenceStore.getString(ONE));
@@ -74,12 +75,12 @@ class PrefPageOne extends PreferencePage {
     new Label(composite, SWT.LEFT).setText("Field Two:");
     fieldTwo = new Text(composite, SWT.BORDER);
     fieldTwo.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-    fieldTwo.setText(preferenceStore.getString(TWO));
+    fieldTwo.setText(instancePrefs.get("texto2", defaultPrefs.get("texto2", "NUNCA DEBE LLEGAR AQUI..")));
 
     new Label(composite, SWT.LEFT).setText("Field Three:");
     fieldThree = new Text(composite, SWT.BORDER);
     fieldThree.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-    fieldThree.setText(preferenceStore.getString(THREE));
+    fieldThree.setText(instancePrefs.get("texto3", defaultPrefs.get("texto3", "NUNCA DEBE LLEGAR AQUI..")));
 
     return composite;
   }
@@ -92,9 +93,9 @@ class PrefPageOne extends PreferencePage {
     IPreferenceStore preferenceStore = getPreferenceStore();
 
     // Reset the fields to the defaults
-    fieldOne.setText(preferenceStore.getDefaultString(ONE));
-    fieldTwo.setText(preferenceStore.getDefaultString(TWO));
-    fieldThree.setText(preferenceStore.getDefaultString(THREE));
+    fieldOne.setText(defaultPrefs.get("texto1", "NUNCA DEBE LLEGAR AQUI.."));
+    fieldTwo.setText(defaultPrefs.get("texto2", "NUNCA DEBE LLEGAR AQUI.."));
+    fieldThree.setText(defaultPrefs.get("texto3", "NUNCA DEBE LLEGAR AQUI.."));
   }
 
   /**
@@ -107,10 +108,10 @@ class PrefPageOne extends PreferencePage {
     IPreferenceStore preferenceStore = getPreferenceStore();
 
     // Set the values from the fields
-    if (fieldOne != null) instancePrefs.put("texto2",fieldOne.getText());//preferenceStore.setValue(ONE, fieldOne.getText());
-    if (fieldTwo != null) preferenceStore.setValue(TWO, fieldTwo.getText());
-    if (fieldThree != null)
-        preferenceStore.setValue(THREE, fieldThree.getText());
+    if (fieldOne != null) instancePrefs.put("texto1",fieldOne.getText());//preferenceStore.setValue(ONE, fieldOne.getText());
+    if (fieldTwo != null) instancePrefs.put("texto2",fieldTwo.getText());
+    if (fieldThree != null) instancePrefs.put("texto3",fieldThree.getText());
+       
      try {
 		instancePrefs.flush();
 	} catch (BackingStoreException e) {
